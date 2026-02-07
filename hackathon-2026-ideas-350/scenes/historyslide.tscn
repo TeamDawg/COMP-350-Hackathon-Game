@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ceo0y06ywuuca" path="res://Screenshot 2026-02-07 084701.png" id="1_3485t"]
 [ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_urxx8"]
-[ext_resource type="Texture2D" uid="uid://cowxd7fupkouh" path="res://pngtree-coin-icon-png-game-assets-png-image_6103192.png" id="2_wi7hl"]
+[ext_resource type="Texture2D" uid="uid://bb4hp4n1b3jkl" path="res://4-40447_red-rope-png-clip-free-rope.png" id="2_wi7hl"]
 [ext_resource type="Script" uid="uid://dwtm5fuivg52u" path="res://scripts/coin.gd" id="3_wi7hl"]
+[ext_resource type="PackedScene" uid="uid://du8ft6uh34sde" path="res://scenes/area_2d.tscn" id="5_5mvok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5mvok"]
 radius = 104.41742
@@ -23,28 +24,27 @@ a = Vector2(1691, 11)
 b = Vector2(2, 185.43478)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3485t"]
-size = Vector2(509, 46.5)
+size = Vector2(514.5, 87.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urxx8"]
-size = Vector2(497, 293.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi7hl"]
-size = Vector2(645, 654.5)
+size = Vector2(171.61877, 306.49023)
 
 [node name="Node2D" type="Node2D" unique_id=786953876 groups=["Player"]]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1748408612 groups=["Coin"]]
 offset_right = 1152.0
 offset_bottom = 648.0
+scale = Vector2(0.99850273, 1)
 texture = ExtResource("1_3485t")
 expand_mode = 1
 
 [node name="Coin" type="TextureRect" parent="." unique_id=2086710250 groups=["Coin"]]
-offset_left = 148.99997
-offset_top = 323.99997
-offset_right = 509.0
-offset_bottom = 684.0
-scale = Vector2(0.21090421, 0.21394032)
+offset_left = 527.0
+offset_top = 530.0
+offset_right = 1494.0
+offset_bottom = 1002.0
+rotation = -1.6925751
+scale = Vector2(0.10674747, 0.105177134)
 texture = ExtResource("2_wi7hl")
 script = ExtResource("3_wi7hl")
 
@@ -58,8 +58,8 @@ shape = SubResource("CircleShape2D_5mvok")
 
 [node name="Player" parent="." unique_id=370526508 groups=["Player"] instance=ExtResource("2_urxx8")]
 texture_filter = 1
-position = Vector2(87, 582)
-scale = Vector2(3, 3)
+position = Vector2(104, 610)
+scale = Vector2(3.0100508, 3.5011783)
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=1944838845]
 
@@ -83,25 +83,19 @@ scale = Vector2(1, 4.6)
 shape = SubResource("SegmentShape2D_vrbxu")
 
 [node name="Letter Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1453665424]
-position = Vector2(817.5, 566.75)
+position = Vector2(819, 581.375)
 shape = SubResource("RectangleShape2D_3485t")
 
 [node name="Image Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=655666655]
-position = Vector2(811.5, 363.25)
+position = Vector2(643.33704, 393.88947)
+scale = Vector2(0.94788027, 0.95852625)
 shape = SubResource("RectangleShape2D_urxx8")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1410681597]
-position = Vector2(478.00003, 1115)
-rotation = -1.5614314
-collision_layer = 2
-collision_mask = 2
-gravity_space_override = 1
-gravity_point_center = Vector2(98, 0)
-gravity_direction = Vector2(98, 0)
-gravity = 98.0
+[node name="Guy Collision" type="CollisionPolygon2D" parent="Boundaries" unique_id=457759379]
+scale = Vector2(1.0694867, 1.1512032)
+polygon = PackedVector2Array(694.1112, 351.14798, 730.1936, 356.76633, 729.2441, 336.16565, 749.1843, 331.48367, 757.73016, 341.78403, 786.21625, 340.84763, 820.3996, 321.18335, 841.28937, 294.9643, 852.68384, 280.91837, 894.46344, 271.5544, 919.15137, 290.28232, 894.46344, 287.47314, 886.8671, 302.45544, 874.5232, 321.18335, 788.11536, 387.66736, 766.276, 397.96768)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1892831816]
-position = Vector2(814.5, 330.75)
-shape = SubResource("RectangleShape2D_wi7hl")
+[node name="Area2D" parent="." unique_id=173164117 instance=ExtResource("5_5mvok")]
+position = Vector2(478.99997, 1146)
 
 [connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]
