@@ -14,6 +14,17 @@ config/name="Hackathon 2026 IDEAS 350"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+Player=""
+Coin=""
+
 [input]
 
 move_left={

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://b5jo6pejdql4b"]
+
+[ext_resource type="Texture2D" uid="uid://ceo0y06ywuuca" path="res://Screenshot 2026-02-07 084701.png" id="1_3485t"]
+[ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_urxx8"]
+[ext_resource type="Texture2D" uid="uid://cowxd7fupkouh" path="res://pngtree-coin-icon-png-game-assets-png-image_6103192.png" id="2_wi7hl"]
+[ext_resource type="Script" uid="uid://dwtm5fuivg52u" path="res://scripts/coin.gd" id="3_wi7hl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mvok"]
+radius = 104.41742
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wi7hl"]
+a = Vector2(-3, -181)
+b = Vector2(-1, 647)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5mvok"]
+normal = Vector2(-0.0030769084, -0.99999523)
+distance = -1208.4601
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u7woi"]
+a = Vector2(1691, 11)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vrbxu"]
+b = Vector2(2, 185.43478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3485t"]
+size = Vector2(509, 46.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urxx8"]
+size = Vector2(497, 293.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi7hl"]
+size = Vector2(645, 654.5)
+
+[node name="Node2D" type="Node2D" unique_id=786953876 groups=["Player"]]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1748408612 groups=["Coin"]]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_3485t")
+expand_mode = 1
+
+[node name="Coin" type="TextureRect" parent="." unique_id=2086710250 groups=["Coin"]]
+offset_left = 148.99997
+offset_top = 323.99997
+offset_right = 509.0
+offset_bottom = 684.0
+scale = Vector2(0.21090421, 0.21394032)
+texture = ExtResource("2_wi7hl")
+script = ExtResource("3_wi7hl")
+
+[node name="Area2D" type="Area2D" parent="Coin" unique_id=1005233066 groups=["Coin"]]
+collision_mask = 2
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin/Area2D" unique_id=569579695 groups=["Coin"]]
+position = Vector2(-56.897736, 65.43881)
+shape = SubResource("CircleShape2D_5mvok")
+
+[node name="Player" parent="." unique_id=370526508 groups=["Player"] instance=ExtResource("2_urxx8")]
+texture_filter = 1
+position = Vector2(87, 582)
+scale = Vector2(3, 3)
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=1944838845]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries" unique_id=1801109123]
+position = Vector2(30, 92)
+shape = SubResource("SegmentShape2D_wi7hl")
+
+[node name="Left Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1742826779]
+position = Vector2(243.99998, -199.99997)
+rotation = -3.1415927
+scale = Vector2(3.9005902, -0.6826909)
+shape = SubResource("WorldBoundaryShape2D_5mvok")
+
+[node name="Top Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1468220407]
+position = Vector2(-95, 118)
+shape = SubResource("SegmentShape2D_u7woi")
+
+[node name="Right Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1703244047]
+position = Vector2(1122, 13)
+scale = Vector2(1, 4.6)
+shape = SubResource("SegmentShape2D_vrbxu")
+
+[node name="Letter Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1453665424]
+position = Vector2(817.5, 566.75)
+shape = SubResource("RectangleShape2D_3485t")
+
+[node name="Image Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=655666655]
+position = Vector2(811.5, 363.25)
+shape = SubResource("RectangleShape2D_urxx8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1410681597]
+position = Vector2(478.00003, 1115)
+rotation = -1.5614314
+collision_layer = 2
+collision_mask = 2
+gravity_space_override = 1
+gravity_point_center = Vector2(98, 0)
+gravity_direction = Vector2(98, 0)
+gravity = 98.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1892831816]
+position = Vector2(814.5, 330.75)
+shape = SubResource("RectangleShape2D_wi7hl")
+
+[connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]
