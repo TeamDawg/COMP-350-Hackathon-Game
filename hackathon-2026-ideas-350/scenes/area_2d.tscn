@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://du8ft6uh34sde"]
+
+[ext_resource type="Script" uid="uid://cuhf5vmtk2fjf" path="res://scenes/collision_shape_2d.gd" id="1_svk5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi7hl"]
+size = Vector2(624.50385, 28.371323)
+
+[node name="Area2D" type="Area2D" unique_id=173164117]
+rotation = -1.5614314
+collision_layer = 2
+collision_mask = 2
+gravity_space_override = 1
+gravity_point_center = Vector2(98, -11)
+gravity_direction = Vector2(98, -11)
+gravity = 98.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1551060033]
+position = Vector2(793.2964, 63.691254)
+scale = Vector2(1.0000008, 1.0000008)
+shape = SubResource("RectangleShape2D_wi7hl")
+script = ExtResource("1_svk5y")
+
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="." to="CollisionShape2D" method="_on_area_2d_body_exited"]
