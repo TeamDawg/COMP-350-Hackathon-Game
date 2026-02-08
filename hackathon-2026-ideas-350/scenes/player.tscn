@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -59,11 +59,23 @@ animations = [{
 "texture": ExtResource("7_gl8cc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_487ah")
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
 }],
 "loop": true,
 "name": &"jump",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,8 +146,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
-radius = 42.0
-height = 304.0
+radius = 76.0102
+height = 323.94794
 
 [node name="Player" type="CharacterBody2D" unique_id=678045277]
 z_index = 5
@@ -145,12 +157,11 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=160701314 groups=["Button", "Player"]]
 position = Vector2(-50, -73)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.8302443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030886130]
-position = Vector2(74, -72.99999)
+position = Vector2(0, -132)
 scale = Vector2(3.2890325, 5.0378466)
 shape = SubResource("CapsuleShape2D_fjrip")
 
