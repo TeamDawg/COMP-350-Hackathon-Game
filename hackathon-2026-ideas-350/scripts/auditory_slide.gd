@@ -75,7 +75,7 @@ func death() -> void:
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body == $Player:
 		$Player.visible = false
-		get_tree().change_scene_to_file("res://scenes/modern_slide.tscn")
+		get_tree().change_scene_to_file("res://scenes/transitions/3_AuditoryToModern.tscn")
 
 func _on_play_pause_toggled(toggled_on: bool) -> void:
 	if toggled_on:

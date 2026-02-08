@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://oxx72v4cj0oj"]
+
+[ext_resource type="VideoStream" uid="uid://oj32a5g7ok" path="res://assets/video/1-2.mp4.ogv" id="1_s54tg"]
+[ext_resource type="Script" uid="uid://cqsl84xcrlieb" path="res://scripts/1_optical_to_tactile.gd" id="2_by61b"]
+
+[node name="1OpticalToTactile" type="VideoStreamPlayer" unique_id=933431772]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_s54tg")
+autoplay = true
+script = ExtResource("2_by61b")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

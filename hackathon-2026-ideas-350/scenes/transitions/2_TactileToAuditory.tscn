@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://beoudkfk8ncoe"]
+
+[ext_resource type="VideoStream" uid="uid://35e1ivmw4cft" path="res://assets/video/2-3.mp4.ogv" id="1_t6ksx"]
+[ext_resource type="Script" uid="uid://depgcim500mnb" path="res://scripts/2_tactile_to_auditory.gd" id="2_rcjqv"]
+
+[node name="2TactileToAuditory" type="VideoStreamPlayer" unique_id=2072853235]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_t6ksx")
+autoplay = true
+script = ExtResource("2_rcjqv")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

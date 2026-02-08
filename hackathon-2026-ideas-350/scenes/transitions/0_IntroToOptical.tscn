@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://babpbkgpv64t7"]
+
+[ext_resource type="VideoStream" uid="uid://n51aqfuuodcc" path="res://assets/video/0-1.mp4.ogv" id="1_rhi6g"]
+[ext_resource type="Script" uid="uid://cqvhk8rtl42rk" path="res://scripts/0_intro_to_optical.gd" id="2_b8qgx"]
+
+[node name="0IntroToOptical" type="VideoStreamPlayer" unique_id=1387273185]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_rhi6g")
+autoplay = true
+script = ExtResource("2_b8qgx")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

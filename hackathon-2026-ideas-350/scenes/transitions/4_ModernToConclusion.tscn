@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://f26vqampcvul"]
+
+[ext_resource type="VideoStream" uid="uid://b17hf1ioavckb" path="res://assets/video/4-5.mp4.ogv" id="1_vbpe1"]
+[ext_resource type="Script" uid="uid://dbud1q5c5uluw" path="res://scripts/4_modern_to_conclusion.gd" id="2_eketb"]
+
+[node name="4ModernToConclusion" type="VideoStreamPlayer" unique_id=951599687]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 782.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_vbpe1")
+autoplay = true
+script = ExtResource("2_eketb")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
