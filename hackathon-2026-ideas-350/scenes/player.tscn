@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b02hqbtfmmuq3"]
+[gd_scene load_steps=27 format=3 uid="uid://b02hqbtfmmuq3"]
 
 [ext_resource type="Texture2D" uid="uid://cm2b8y4gx47xv" path="res://assets/gfx/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cifh8vhwlvym2" path="res://scripts/player.gd" id="1_g2els"]
@@ -173,21 +173,22 @@ animations = [{
 radius = 5.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D" unique_id=370526508]
+[node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=548364327]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Button", "Player"]]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.59723455
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587700206]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_fjrip")
 
-[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=1126850233]
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_uir0k")
 volume_db = -5.0
