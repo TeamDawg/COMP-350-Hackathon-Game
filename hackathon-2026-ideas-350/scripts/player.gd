@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-var SPEED = 130.0
+var SRINT_SPEED = 150
+var SPEED = 100.0
 var JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -40,10 +41,10 @@ func _physics_process(delta: float) -> void:
 		
 		elif Input.is_action_pressed("shift"):
 			animated_sprite.play("run")
-			
+			SPEED = SRINT_SPEED
 		else:
 			animated_sprite.play("walk")
-				
+			SPEED = 100.0
 	else:
 		animated_sprite.play("jump")
 		velocity += get_gravity() * delta
