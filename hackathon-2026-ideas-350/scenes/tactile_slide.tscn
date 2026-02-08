@@ -1,3 +1,184 @@
 [gd_scene format=3 uid="uid://6hoir5uw2lxd"]
 
-[node name="Node2D" type="Node2D" unique_id=279844191]
+[ext_resource type="Texture2D" uid="uid://sdv1batexvbj" path="res://assets/gfx/tactile_slide.png" id="1_01b0j"]
+[ext_resource type="Script" uid="uid://g3hn4ihuetc0" path="res://scripts/tactile_slide.gd" id="1_850sj"]
+[ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_cdc42"]
+[ext_resource type="Texture2D" uid="uid://birofoiqtqk6c" path="res://assets/gfx/RealHand.png" id="3_7ur2r"]
+[ext_resource type="Texture2D" uid="uid://xakq8oa8wsis" path="res://assets/gfx/Green_Box_2.png" id="4_thwkx"]
+[ext_resource type="Texture2D" uid="uid://p8gyxqkthvsq" path="res://assets/gfx/RubberHand.png" id="5_thwkx"]
+[ext_resource type="AudioStream" uid="uid://comb5qlb7rg80" path="res://assets/sounds/rubber_hand.ogg" id="7_cc78t"]
+[ext_resource type="AudioStream" uid="uid://ctqbyht4sqdna" path="res://assets/sounds/ouch.ogg" id="8_cc78t"]
+[ext_resource type="AudioStream" uid="uid://br50yc38ihbel" path="res://assets/sounds/metal_bar.ogg" id="9_7yqrr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ur2r"]
+distance = 22.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_thwkx"]
+normal = Vector2(1, 0)
+distance = 30.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_850sj"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2hpu"]
+normal = Vector2(0, 1)
+distance = -520.0
+
+[node name="tactile_slide" type="Node2D" unique_id=279844191]
+script = ExtResource("1_850sj")
+
+[node name="BG" type="TextureRect" parent="." unique_id=497946063]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_01b0j")
+expand_mode = 1
+
+[node name="Player" parent="." unique_id=2025505633 instance=ExtResource("2_cdc42")]
+texture_filter = 1
+position = Vector2(1030, 611)
+scale = Vector2(2, 2)
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=682441047]
+
+[node name="Bottom" type="CollisionShape2D" parent="Boundaries" unique_id=40459904]
+position = Vector2(0, 647)
+shape = SubResource("WorldBoundaryShape2D_7ur2r")
+
+[node name="Left" type="CollisionShape2D" parent="Boundaries" unique_id=1432220300]
+shape = SubResource("WorldBoundaryShape2D_thwkx")
+
+[node name="Right" type="CollisionShape2D" parent="Boundaries" unique_id=1768578095]
+position = Vector2(1122, 0)
+shape = SubResource("WorldBoundaryShape2D_850sj")
+
+[node name="Top" type="CollisionShape2D" parent="Boundaries" unique_id=2070283175]
+position = Vector2(0, 647)
+shape = SubResource("WorldBoundaryShape2D_g2hpu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries" unique_id=40827898]
+polygon = PackedVector2Array(90, 562, 87, 575, 77, 579, 88, 583, 90, 597, 94, 582, 105, 579, 94, 576)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundaries" unique_id=1502924633]
+polygon = PackedVector2Array(60, 510, 57, 524, 47, 527, 58, 530, 60, 544, 63, 531, 74, 527, 63, 524)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Boundaries" unique_id=1948730893]
+polygon = PackedVector2Array(129, 463, 126, 476, 116, 479, 127, 483, 129, 496, 132, 483, 142, 479, 131, 476)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Boundaries" unique_id=47173423]
+polygon = PackedVector2Array(79, 413, 76, 426, 65, 429, 77, 433, 79, 445, 82, 432, 92, 429, 82, 426)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Boundaries" unique_id=77407106]
+polygon = PackedVector2Array(141, 349, 138, 362, 128, 366, 138, 368, 141, 382, 144, 368, 154, 365, 144, 362)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Boundaries" unique_id=1298522671]
+polygon = PackedVector2Array(73, 287, 70, 299, 60, 303, 71, 307, 73, 319, 76, 306, 87, 303, 76, 299)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Boundaries" unique_id=1677232011]
+polygon = PackedVector2Array(103, 208, 101, 220, 91, 224, 101, 227, 104, 240, 107, 227, 117, 224, 106, 221)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Boundaries" unique_id=2126092508]
+polygon = PackedVector2Array(256, 139, 253, 150, 242, 154, 253, 157, 256, 170, 259, 157, 269, 154, 258, 150)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Boundaries" unique_id=74283860]
+polygon = PackedVector2Array(308, 245, 305, 258, 294, 262, 305, 265, 308, 278, 311, 265, 321, 262, 310, 258)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Boundaries" unique_id=991375592]
+polygon = PackedVector2Array(822, 380, 819, 393, 809, 396, 819, 399, 822, 413, 825, 398, 835, 396, 825, 392)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Boundaries" unique_id=235113827]
+polygon = PackedVector2Array(813, 217, 810, 229, 799, 234, 811, 237, 813, 250, 816, 236, 826, 233, 815, 230)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Boundaries" unique_id=1677536278]
+polygon = PackedVector2Array(1007, 144, 1004, 157, 994, 161, 1005, 164, 1007, 177, 1010, 164, 1021, 161, 1010, 157)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Boundaries" unique_id=1440954694]
+polygon = PackedVector2Array(1078, 354, 1075, 366, 1064, 370, 1075, 373, 1078, 387, 1081, 373, 1091, 370, 1080, 366)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Boundaries" unique_id=1082736217]
+polygon = PackedVector2Array(1065, 563, 1063, 576, 1052, 579, 1063, 583, 1065, 596, 1069, 582, 1080, 579, 1069, 576)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Boundaries" unique_id=407559067]
+polygon = PackedVector2Array(809, 487, 806, 499, 796, 503, 806, 506, 809, 519, 812, 506, 822, 503, 812, 500)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Boundaries" unique_id=1999042445]
+polygon = PackedVector2Array(387, 559, 387, 606, 417, 606, 417, 591, 763, 591, 763, 579, 745, 579, 745, 576, 741, 576, 741, 578, 731, 578, 731, 559)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Boundaries" unique_id=425183484]
+polygon = PackedVector2Array(165, 576, 285, 576, 285, 559, 277, 559, 277, 563, 251, 563, 251, 560, 235, 560, 235, 564, 207, 564, 207, 559, 200, 559, 200, 563, 195, 563, 195, 559, 189, 559, 189, 564, 178, 564, 178, 560, 165, 560)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="Boundaries" unique_id=350433055]
+polygon = PackedVector2Array(165, 508, 165, 523, 190, 523, 190, 526, 197, 526, 197, 523, 308, 523, 308, 526, 320, 526, 320, 511, 296, 511, 296, 506, 285, 506, 285, 511, 241, 511, 241, 507, 229, 507, 229, 512, 214, 512, 214, 506, 209, 506, 209, 509, 202, 509, 202, 512, 181, 512, 181, 508)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="Boundaries" unique_id=354785512]
+polygon = PackedVector2Array(387, 506, 391, 518, 738, 518, 738, 510, 699, 510, 699, 505, 659, 505, 659, 509, 632, 509, 632, 506, 623, 506, 623, 509, 536, 509, 536, 505, 528, 505, 528, 508, 507, 508, 507, 505, 503, 505, 502, 508, 467, 508, 467, 505, 463, 505, 463, 508, 432, 508, 404, 508, 404, 506)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="Boundaries" unique_id=771728923]
+polygon = PackedVector2Array(164, 442, 164, 448, 167, 448, 167, 458, 265, 458, 265, 461, 272, 461, 272, 458, 277, 458, 277, 461, 284, 461, 284, 458, 363, 458, 363, 446, 353, 446, 353, 442, 347, 444, 347, 446, 331, 446, 331, 441, 302, 442, 302, 446, 255, 446, 255, 442, 236, 442, 236, 440, 231, 440, 231, 445, 178, 445, 178, 442)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="Boundaries" unique_id=448331785]
+polygon = PackedVector2Array(387, 440, 387, 470, 552, 470, 552, 473, 556, 473, 556, 470, 602, 470, 602, 453, 628, 453, 628, 456, 633, 456, 633, 453, 750, 453, 753, 444, 728, 444, 728, 440, 724, 440, 724, 444, 675, 444, 675, 439, 669, 439, 666, 443, 658, 443, 658, 440, 645, 442, 644, 444, 569, 444, 569, 440, 566, 440, 557, 444, 540, 444, 540, 440, 537, 440, 537, 444, 511, 444, 511, 441, 508, 441, 508, 443, 468, 443, 468, 441, 465, 441, 465, 443, 452, 443, 452, 440, 449, 440, 449, 444, 425, 444, 425, 440, 421, 440, 421, 443, 419, 443, 419, 441, 417, 441, 417, 444, 400, 444, 400, 440)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="Boundaries" unique_id=967084914]
+polygon = PackedVector2Array(171, 336, 164, 352, 255, 352, 255, 341, 246, 341, 245, 337, 241, 337, 241, 341, 231, 341, 231, 335, 226, 335, 218, 340, 206, 340, 206, 337, 202, 337, 202, 340, 192, 340, 192, 335, 187, 335, 187, 340, 173, 340)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="Boundaries" unique_id=499251102]
+polygon = PackedVector2Array(387, 335, 387, 401, 442, 401, 442, 383, 463, 383, 463, 385, 468, 385, 468, 383, 558, 383, 558, 385, 566, 385, 566, 383, 684, 383, 684, 385, 687, 385, 687, 383, 744, 383, 744, 385, 749, 385, 750, 382, 789, 382, 789, 338, 776, 338, 776, 335, 772, 335, 765, 339, 755, 339, 755, 335, 752, 335, 752, 338, 692, 338, 692, 335, 689, 335, 689, 338, 683, 338, 683, 335, 679, 335, 679, 338, 655, 338, 655, 336, 652, 336, 652, 338, 627, 338, 627, 335, 623, 335, 618, 338, 584, 338, 584, 335, 578, 335, 575, 338, 557, 338, 557, 335, 553, 335, 553, 338, 540, 338, 540, 335, 537, 335, 537, 338, 532, 338, 532, 335, 528, 335, 528, 338, 497, 338, 497, 335, 473, 335, 473, 338, 428, 338, 428, 335, 425, 335, 425, 338, 397, 338, 397, 335)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="Boundaries" unique_id=1280368742]
+polygon = PackedVector2Array(172, 251, 165, 255, 165, 261, 171, 267, 177, 266, 260, 266, 260, 255, 195, 255, 195, 252, 191, 253, 191, 255, 178, 255, 178, 251, 176, 252)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Boundaries" unique_id=1049894124]
+polygon = PackedVector2Array(387, 250, 387, 297, 431, 297, 431, 299, 437, 299, 437, 297, 459, 297, 459, 279, 583, 279, 583, 281, 590, 281, 591, 279, 640, 279, 640, 281, 653, 281, 653, 279, 669, 279, 669, 281, 677, 281, 677, 279, 700, 279, 700, 281, 703, 281, 704, 279, 764, 279, 764, 270, 751, 270, 751, 267, 748, 267, 748, 269, 743, 268, 743, 253, 741, 253, 741, 251, 737, 251, 737, 249, 734, 249, 734, 253, 728, 253, 728, 249, 725, 249, 725, 253, 720, 253, 720, 249, 717, 249, 717, 253, 677, 253, 677, 249, 665, 249, 665, 252, 654, 252, 654, 249, 651, 249, 651, 252, 638, 252, 638, 249, 633, 249, 633, 252, 599, 252, 599, 249, 596, 249, 596, 253, 563, 253, 563, 251, 561, 251, 561, 253, 547, 253, 547, 249, 544, 249, 544, 253, 532, 253, 532, 249, 524, 249, 524, 252, 519, 252, 519, 249, 516, 249, 516, 252, 423, 252, 423, 249, 421, 249, 421, 253, 396, 253, 396, 250)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="Boundaries" unique_id=1499273442]
+polygon = PackedVector2Array(175, 202, 168, 219, 251, 219, 251, 224, 271, 224, 271, 220, 304, 220, 304, 206, 251, 206, 251, 202, 236, 202, 236, 206, 202, 206, 202, 202)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="Boundaries" unique_id=24673969]
+polygon = PackedVector2Array(372, 182, 365, 199, 589, 199, 589, 203, 593, 203, 596, 199, 790, 199, 790, 180, 786, 180, 786, 186, 777, 186, 777, 180, 772, 180, 772, 186, 733, 186, 733, 183, 724, 183, 724, 180, 719, 180, 713, 186, 630, 186, 630, 186, 565, 186, 565, 181, 560, 181, 560, 186, 548, 186, 548, 181, 544, 181, 544, 186, 530, 186, 530, 183, 526, 183, 526, 185, 516, 185, 516, 183, 512, 183, 512, 186, 491, 186, 491, 180, 486, 180, 486, 183, 480, 183, 480, 186, 446, 186, 446, 181, 442, 181, 442, 185, 417, 185, 417, 180, 405, 180, 405, 181, 399, 181, 399, 187, 375, 187)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="Boundaries" unique_id=1066270273]
+polygon = PackedVector2Array(525, 155, 532, 172, 630, 172, 630, 159, 613, 159, 613, 153, 607, 153, 607, 159, 599, 159, 599, 156, 592, 157, 592, 154, 587, 154, 587, 160, 578, 160, 578, 155, 573, 157, 573, 159, 553, 159, 553, 153, 547, 153, 547, 155)
+
+[node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="Boundaries" unique_id=643198365]
+polygon = PackedVector2Array(859, 402, 859, 560, 1129, 559, 1129, 402)
+
+[node name="RealHand" type="TextureRect" parent="." unique_id=796928141]
+offset_left = 873.0
+offset_top = 413.0
+offset_right = 1132.2362
+offset_bottom = 540.0
+texture = ExtResource("3_7ur2r")
+expand_mode = 1
+
+[node name="GreenOverlay" type="TextureRect" parent="." unique_id=936545184]
+offset_left = 1123.0
+offset_top = 403.0
+offset_right = 1155.0
+offset_bottom = 558.0
+texture = ExtResource("4_thwkx")
+expand_mode = 1
+
+[node name="RubberHand" type="Area2D" parent="." unique_id=1164821381]
+collision_mask = 2
+
+[node name="RubberHand" type="TextureRect" parent="RubberHand" unique_id=1030616967]
+offset_left = 875.5
+offset_top = 197.0
+offset_right = 1125.5
+offset_bottom = 353.0
+texture = ExtResource("5_thwkx")
+expand_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RubberHand" unique_id=2025076651]
+polygon = PackedVector2Array(1126, 295, 1110, 296, 1098, 300, 1083, 309, 1067, 316, 1041, 320, 1023, 323, 1002, 332, 978, 346, 968, 351, 956, 353, 952, 353, 949, 350, 950, 346, 960, 337, 970, 331, 1003, 316, 1004, 313, 1001, 312, 982, 315, 947, 324, 931, 330, 919, 330, 908, 328, 903, 324, 906, 318, 965, 302, 990, 297, 991, 295, 987, 294, 969, 292, 930, 292, 898, 296, 886, 294, 877, 289, 876, 284, 878, 280, 897, 277, 978, 277, 990, 275, 993, 271, 991, 268, 988, 266, 982, 264, 969, 262, 908, 258, 897, 255, 892, 249, 893, 245, 901, 241, 918, 240, 937, 240, 974, 245, 1007, 244, 1015, 241, 1015, 237, 1013, 233, 987, 214, 984, 211, 979, 203, 979, 200, 982, 198, 991, 198, 1010, 209, 1034, 226, 1056, 235, 1081, 245, 1103, 260, 1113, 262, 1126, 262)
+
+[node name="RubberSFX" type="AudioStreamPlayer2D" parent="RubberHand" unique_id=1482649722]
+stream = ExtResource("7_cc78t")
+
+[node name="Ouch" type="AudioStreamPlayer2D" parent="RubberHand" unique_id=1932585619]
+stream = ExtResource("8_cc78t")
+
+[node name="MetalBar" type="AudioStreamPlayer2D" parent="RubberHand" unique_id=745516131]
+stream = ExtResource("9_7yqrr")
+
+[connection signal="body_entered" from="RubberHand" to="." method="_on_rubber_hand_body_entered"]
