@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dkv247d6fbque" path="res://assets/gfx/base_path2.png" id="1_c3agc"]
 [ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_cphkb"]
-[ext_resource type="Script" path="res://scripts/optic_slide.gd" id="2_rrmhq"]
+[ext_resource type="Script" uid="uid://c3m8o1v6xtgim" path="res://scripts/optic_slide.gd" id="2_rrmhq"]
 [ext_resource type="PackedScene" uid="uid://bv7v6i7jfv2jp" path="res://scenes/texture_rect.tscn" id="3_1nbks"]
 [ext_resource type="Texture2D" uid="uid://dge74r1g64w3j" path="res://assets/gfx/disappearing_path.png" id="4_l6fwj"]
 [ext_resource type="PackedScene" uid="uid://bj6lmdmw1oxqh" path="res://scenes/grass.tscn" id="5_arkji"]
 [ext_resource type="PackedScene" uid="uid://ctt01rt7wq6ga" path="res://scenes/button.tscn" id="7_fxxlc"]
 [ext_resource type="PackedScene" uid="uid://brg132q5uhxnk" path="res://scenes/howPlatform.tscn" id="8_rrmhq"]
-[ext_resource type="Script" path="res://scripts/platform_trigger.gd" id="9_c3agc"]
-[ext_resource type="Script" path="res://scripts/trigger_area.gd" id="10_qpkk6"]
+[ext_resource type="Script" uid="uid://5dcmsnv67j84" path="res://scripts/platform_trigger.gd" id="9_c3agc"]
+[ext_resource type="Script" uid="uid://dq51ijwnu82vm" path="res://scripts/trigger_area.gd" id="10_qpkk6"]
 [ext_resource type="FontFile" uid="uid://cxmtftkag58r8" path="res://assets/sounds/bytebounce/ByteBounce.ttf" id="11_jks7e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cphkb"]
@@ -88,7 +88,7 @@ script = ExtResource("2_rrmhq")
 [node name="boundaries" type="StaticBody2D" parent="." unique_id=849522508]
 
 [node name="floor" type="CollisionShape2D" parent="boundaries" unique_id=1850207757]
-position = Vector2(295.14078, 1083.0953)
+position = Vector2(295.1408, 1105.6598)
 shape = SubResource("WorldBoundaryShape2D_cphkb")
 
 [node name="left-wall" type="CollisionShape2D" parent="boundaries" unique_id=1164986814]
@@ -103,8 +103,8 @@ shape = SubResource("WorldBoundaryShape2D_l6fwj")
 
 [node name="player" parent="." unique_id=1360483534 instance=ExtResource("2_cphkb")]
 unique_name_in_owner = true
-position = Vector2(480.2291, 1521.8492)
-scale = Vector2(7.0000005, 7)
+position = Vector2(522.7493, 1481.7346)
+scale = Vector2(0.1, 0.1)
 
 [node name="correctPath" parent="." unique_id=1306907347 instance=ExtResource("3_1nbks")]
 z_index = 1
