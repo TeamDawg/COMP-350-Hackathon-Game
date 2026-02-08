@@ -4,6 +4,19 @@ var SPEED = 130.0
 var JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D 
+
+
+func reverse_gravity(boolean: bool):
+	animated_sprite.flip_v = boolean 
+	if boolean:
+		up_direction = Vector2.DOWN
+		collision_shape.position = Vector2(0, 0) 
+	else:
+		up_direction = Vector2.UP
+		collision_shape.position = Vector2(0, 0) 
+
+	
 
 func _physics_process(delta: float) -> void:
 	# Handle jump.
