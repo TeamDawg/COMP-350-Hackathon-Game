@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bh6axa4pj3gs8"]
+
+[ext_resource type="Texture2D" uid="uid://b3g6kt0kvgsut" path="res://assets/gfx/conclusion.png" id="1_rvn27"]
+
+[node name="Conclusion_slide" type="TextureRect" unique_id=2100623370]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rvn27")
+expand_mode = 3
