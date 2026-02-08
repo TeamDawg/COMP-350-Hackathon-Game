@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		if not $Walking.playing:
 			$Walking.play()
-		else:
+	else:
 			$Walking.stop()
 
 	# Get the input direction (-1, 0, 1)

@@ -69,8 +69,8 @@ expand_mode = 1
 
 [node name="Player" parent="." unique_id=370526508 instance=ExtResource("2_ygbxu")]
 texture_filter = 1
-position = Vector2(570, 613.00006)
-scale = Vector2(5, 5)
+position = Vector2(214, 534)
+scale = Vector2(0.09987806, 0.05689824)
 
 [node name="Coin" type="AudioStreamPlayer" parent="Player" unique_id=115164160]
 stream = ExtResource("6_27vwn")
