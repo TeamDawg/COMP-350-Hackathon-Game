@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dge74r1g64w3j" path="res://assets/gfx/disappearing_path.png" id="4_l6fwj"]
 [ext_resource type="PackedScene" uid="uid://bj6lmdmw1oxqh" path="res://scenes/grass.tscn" id="5_arkji"]
 [ext_resource type="PackedScene" uid="uid://ctt01rt7wq6ga" path="res://scenes/button.tscn" id="7_fxxlc"]
-[ext_resource type="PackedScene" uid="uid://cj4kkb83ogb8b" path="res://scenes/howPlatform.tscn" id="8_rrmhq"]
+[ext_resource type="PackedScene" uid="uid://brg132q5uhxnk" path="res://scenes/howPlatform.tscn" id="8_rrmhq"]
 [ext_resource type="Script" uid="uid://5dcmsnv67j84" path="res://scripts/platform_trigger.gd" id="9_c3agc"]
 [ext_resource type="Script" uid="uid://dq51ijwnu82vm" path="res://scripts/trigger_area.gd" id="10_qpkk6"]
 [ext_resource type="FontFile" uid="uid://cxmtftkag58r8" path="res://assets/sounds/bytebounce/ByteBounce.ttf" id="11_jks7e"]
+[ext_resource type="Texture2D" uid="uid://dtovfjlxh866r" path="res://LostMedia/Uploads/classic-wooden-door-with-keyhole-png.png" id="12_k6pvd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cphkb"]
 distance = -468.83984
@@ -80,6 +81,9 @@ font_size = 100
 font = ExtResource("11_jks7e")
 font_size = 100
 font_color = Color(1, 0.8627451, 0.64705884, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo105"]
+size = Vector2(138.8138, 152.92271)
 
 [node name="optics_slide" type="TextureRect" unique_id=823992263]
 offset_right = 2880.0
@@ -206,6 +210,22 @@ label_settings = SubResource("LabelSettings_jks7e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Door" type="Area2D" parent="." unique_id=641651827]
+collision_mask = 2
+
+[node name="TextureRect" type="TextureRect" parent="Door" unique_id=222476077]
+offset_left = 2533.7087
+offset_top = 521.49036
+offset_right = 2686.2158
+offset_bottom = 673.99744
+texture = ExtResource("12_k6pvd")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1727297066]
+position = Vector2(2609.371, 597.9517)
+shape = SubResource("RectangleShape2D_vo105")
+
 [connection signal="tree_entered" from="." to="button" method="_on_slide_tree_entered"]
 [connection signal="body_entered" from="howPlatform/PlatformTrigger" to="howPlatform/PlatformTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="triggerArea" to="triggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
