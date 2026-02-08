@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 		done = false
 		await get_tree().create_timer(0.7).timeout
 		$RubberHand/MetalBar.play()
+		await get_tree().create_timer(1.5).timeout
+		get_tree().change_scene_to_file("res://scenes/auditory_slide.tscn")
 
 # Upon entering rubber hand.
 func _on_rubber_hand_body_entered(body: Node2D) -> void:

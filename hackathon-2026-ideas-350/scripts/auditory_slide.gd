@@ -16,7 +16,7 @@ const video_bah_positionX : float = -825.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Player.JUMP_VELOCITY *= 1.85
+	$Player.JUMP_VELOCITY *= 1.5
 	correct_order.shuffle()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -72,6 +72,7 @@ func death() -> void:
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body == $Player:
 		$Player.visible = false
+		get_tree().change_scene_to_file("res://scenes/modern_slide.tscn")
 
 func _on_play_pause_toggled(toggled_on: bool) -> void:
 	if toggled_on:

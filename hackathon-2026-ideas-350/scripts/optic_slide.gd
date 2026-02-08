@@ -16,4 +16,6 @@ func _process(_delta: float) -> void:
 		button.pressed = true
 		disappearing_step.visible = true
 	
-	
+func _on_door_body_entered(body: Node2D) -> void:
+	if body == $player:
+		get_tree().change_scene_to_file("res://scenes/tactile_slide.tscn")

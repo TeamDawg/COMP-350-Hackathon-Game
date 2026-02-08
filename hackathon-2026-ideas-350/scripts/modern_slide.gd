@@ -51,6 +51,7 @@ func _on_correct_detectors_body_entered(body: Node2D) -> void:
 			$CorrectDetectors/Correct3.disabled = true
 			$WrongDetectors/Wrong3_1.disabled = true
 			$WrongDetectors/Wrong3_2.disabled = true
+			get_tree().change_scene_to_file("res://scenes/conclusion_slide.tscn")
 		elif beat_two:
 			var tween = get_tree().create_tween()
 			tween.parallel().tween_property($CorrectWord2, "position:y", $CorrectWord2.position.y - 25, 0.25)

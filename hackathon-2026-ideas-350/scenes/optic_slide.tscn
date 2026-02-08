@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://5dcmsnv67j84" path="res://scripts/platform_trigger.gd" id="9_c3agc"]
 [ext_resource type="Script" uid="uid://dq51ijwnu82vm" path="res://scripts/trigger_area.gd" id="10_qpkk6"]
 [ext_resource type="FontFile" uid="uid://cxmtftkag58r8" path="res://assets/sounds/bytebounce/ByteBounce.ttf" id="11_jks7e"]
+[ext_resource type="Texture2D" uid="uid://dtovfjlxh866r" path="res://LostMedia/Uploads/classic-wooden-door-with-keyhole-png.png" id="12_k6pvd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cphkb"]
 distance = -468.83984
@@ -64,7 +65,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrmhq"]
-size = Vector2(167.57513, 9.999939)
+size = Vector2(166.32701, 12.521378)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3agc"]
 size = Vector2(1136.7909, 129.11192)
@@ -75,6 +76,9 @@ size = Vector2(115.05467, 110.315186)
 [sub_resource type="LabelSettings" id="LabelSettings_k6pvd"]
 font = ExtResource("11_jks7e")
 font_size = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo105"]
+size = Vector2(156.95108, 156.6835)
 
 [node name="optics_slide" type="TextureRect" unique_id=823992263]
 offset_right = 2880.0
@@ -107,10 +111,10 @@ scale = Vector2(0.1, 0.1)
 [node name="correctPath" parent="." unique_id=2078098896 instance=ExtResource("3_1nbks")]
 z_index = 1
 layout_mode = 0
-offset_left = 112.553696
-offset_top = 892.5508
-offset_right = 845.4033
-offset_bottom = 1460.5508
+offset_left = 112.55
+offset_top = 892.55
+offset_right = 845.39966
+offset_bottom = 1460.55
 
 [node name="button" parent="." unique_id=1635194617 instance=ExtResource("7_fxxlc")]
 position = Vector2(945.451, 1521.8492)
@@ -160,7 +164,7 @@ libraries/ = SubResource("AnimationLibrary_jks7e")
 speed_scale = 0.457
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="howPlatform/PlatformTrigger" unique_id=2039681148]
-position = Vector2(70.03338, 5.340576e-05)
+position = Vector2(70.65747, 1.2608032)
 shape = SubResource("RectangleShape2D_rrmhq")
 
 [node name="OpticalDef" type="StaticBody2D" parent="." unique_id=731866339]
@@ -187,6 +191,22 @@ offset_bottom = 1049.3015
 text = "Why did you jump? "
 label_settings = SubResource("LabelSettings_k6pvd")
 
+[node name="Door" type="Area2D" parent="." unique_id=2079663072]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1234835703]
+position = Vector2(2610.3071, 597.32495)
+shape = SubResource("RectangleShape2D_vo105")
+
+[node name="TextureRect" type="TextureRect" parent="Door" unique_id=451679548]
+offset_left = 2531.2075
+offset_top = 521.49036
+offset_right = 2686.148
+offset_bottom = 676.4308
+texture = ExtResource("12_k6pvd")
+expand_mode = 1
+
 [connection signal="tree_entered" from="." to="button" method="_on_slide_tree_entered"]
 [connection signal="body_entered" from="howPlatform/PlatformTrigger" to="howPlatform/PlatformTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="triggerArea" to="triggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
