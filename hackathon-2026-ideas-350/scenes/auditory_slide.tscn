@@ -85,7 +85,7 @@ script = ExtResource("1_xxe66")
 [node name="Player" parent="." unique_id=370526508 instance=ExtResource("3_32cb4")]
 texture_filter = 1
 position = Vector2(81, 597)
-scale = Vector2(0.09636896, 0.038302857)
+scale = Vector2(0.05, 0.05)
 
 [node name="Explosion" type="AudioStreamPlayer" parent="Player" unique_id=229467871]
 stream = ExtResource("6_skwpl")
