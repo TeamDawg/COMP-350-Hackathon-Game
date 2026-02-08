@@ -12,7 +12,6 @@ func _ready() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("===== COIN COLLISION =====")
 	print("Body name: ", body.name)
 	print("Body groups: ", body.get_groups())
 	print("Is in 'Player' group: ", body.is_in_group('Player'))
