@@ -18,6 +18,9 @@ const video_bah_positionX : float = -825.0
 func _ready() -> void:
 	$Player.JUMP_VELOCITY *= 1.5
 	correct_order.shuffle()
+	#if $Player.has_method("invertmovement"):
+		#print($Player.swapped_controls)
+		#$Player.invertmovement()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

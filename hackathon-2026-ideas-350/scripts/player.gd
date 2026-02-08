@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	else:
 			$Walking.stop()
 	
+	# Noise for Sprint
 	if Input.is_action_pressed("shift"):
 		if not $Sprint.playing:
 			$Sprint.play()
@@ -39,6 +40,8 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction (-1, 0, 1)
 	var direction := Input.get_axis("move_left", "move_right")
+	var input_direction = direction
+	
 	
 	# Flip the sprite
 	if direction > 0:
@@ -66,5 +69,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
 	move_and_slide()
+	
+var swapped_controls = false
+
+func invertmovement():
+	# Swap back to normal
+	var temp_left = InputMap.action_get_events("move_left")
+	var temp_right = InputMap.action_get_events("move_right")
+	
+	InputMap.action_erase_events("move_left")
+	InputMap.action_erase_events("move_right")
+	
+	for event in temp_right:
+		InputMap.action_add_event("move_left", event)
+	for event in temp_left:
+		InputMap.action_add_event("move_right", event)

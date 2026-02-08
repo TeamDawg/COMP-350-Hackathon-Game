@@ -5,10 +5,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Player.invertmovement()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if hurt:
 		$RubberHand.monitoring = false
 		$RealHand.position.x += 8
@@ -17,6 +18,7 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(0.7).timeout
 		$RubberHand/MetalBar.play()
 		await get_tree().create_timer(1.5).timeout
+		$Player.invertmovement()
 		get_tree().change_scene_to_file("res://scenes/auditory_slide.tscn")
 
 # Upon entering rubber hand.
