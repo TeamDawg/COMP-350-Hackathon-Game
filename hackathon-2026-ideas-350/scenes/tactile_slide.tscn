@@ -35,8 +35,8 @@ expand_mode = 1
 
 [node name="Player" parent="." unique_id=2025505633 instance=ExtResource("2_cdc42")]
 texture_filter = 1
-position = Vector2(1030, 611)
-scale = Vector2(2, 2)
+position = Vector2(128, 557)
+scale = Vector2(0.022706943, 0.01817157)
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=682441047]
 
