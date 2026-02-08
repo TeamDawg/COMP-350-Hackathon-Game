@@ -1,13 +1,19 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://c4yi80qdn10x3"]
 
 [ext_resource type="Script" path="res://scripts/obstacle1.gd" id="1_y0vjh"]
 [ext_resource type="Texture2D" path="res://Uploads/pngtree-pink-optical-illusion-donut-vector-png-image_6290787.png" id="2_km1om"]
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene format=3 uid="uid://dl17ps4ytuqn7"]
 
 [ext_resource type="Script" uid="uid://pdxv8nqaog4q" path="res://scripts/obstacle1.gd" id="1_y0vjh"]
 [ext_resource type="Texture2D" uid="uid://xlpn18hlq46j" path="res://Uploads/pngtree-pink-optical-illusion-donut-vector-png-image_6290787.png" id="2_km1om"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5phv"]
