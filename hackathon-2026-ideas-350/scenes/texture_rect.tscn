@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv7v6i7jfv2jp"]
+
+[ext_resource type="Texture2D" uid="uid://diclml0dq7h5d" path="res://assets/gfx/DoesOneGetUp.png" id="1_aaasg"]
+[ext_resource type="Script" uid="uid://cdhlts5fb0pm7" path="res://scripts/texture_rect.gd" id="2_uknbb"]
+[ext_resource type="Script" uid="uid://jgglh0uyjhi0" path="res://scenes/timer.gd" id="3_aaasg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ir5p"]
+size = Vector2(118.01953, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uknbb"]
+size = Vector2(149.5, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaasg"]
+size = Vector2(171.57813, 52.5)
+
+[node name="HiddenText" type="TextureRect"]
+offset_right = 908.0
+offset_bottom = 645.0
+texture = ExtResource("1_aaasg")
+stretch_mode = 2
+script = ExtResource("2_uknbb")
+
+[node name="TextCollisions" type="StaticBody2D" parent="."]
+
+[node name="UP" type="CollisionShape2D" parent="TextCollisions"]
+position = Vector2(98.990234, 517)
+shape = SubResource("RectangleShape2D_3ir5p")
+one_way_collision = true
+
+[node name="GET" type="CollisionShape2D" parent="TextCollisions"]
+position = Vector2(248, 317)
+shape = SubResource("RectangleShape2D_3ir5p")
+one_way_collision = true
+
+[node name="ONE" type="CollisionShape2D" parent="TextCollisions"]
+position = Vector2(401, 182)
+shape = SubResource("RectangleShape2D_uknbb")
+one_way_collision = true
+
+[node name="DOES" type="CollisionShape2D" parent="TextCollisions"]
+position = Vector2(128.21094, 49)
+shape = SubResource("RectangleShape2D_aaasg")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+script = ExtResource("3_aaasg")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

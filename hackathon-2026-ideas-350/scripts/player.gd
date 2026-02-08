@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var SPEED = 130.0
-var JUMP_VELOCITY = -300.0
+var JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D 

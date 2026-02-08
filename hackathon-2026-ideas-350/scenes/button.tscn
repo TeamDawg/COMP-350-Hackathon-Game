@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctt01rt7wq6ga"]
+
+[ext_resource type="Script" uid="uid://l5mal4jgjgdd" path="res://scripts/button.gd" id="1_3q610"]
+[ext_resource type="Texture2D" uid="uid://dnrsx4x6fq0y4" path="res://assets/gfx/OffButton.png" id="1_rhj8v"]
+[ext_resource type="Texture2D" uid="uid://b6awdr8hsdkm7" path="res://assets/gfx/OnButton.png" id="2_3q610"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7y4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rhj8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3q610")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bdt2"]
+radius = 8.999897
+
+[node name="Button" type="Area2D" groups=["Button", "Player"]]
+collision_mask = 2
+script = ExtResource("1_3q610")
+
+[node name="animateButton" type="AnimatedSprite2D" parent="." groups=["Player"]]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_i7y4x")
+frame = 1
+frame_progress = 0.940506
+
+[node name="buttonCol" type="CollisionShape2D" parent="."]
+position = Vector2(-2.0000002, 15)
+rotation = -1.5660095
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_1bdt2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_entered_tree" from="animateButton" to="." method="_on_animated_sprite_2d_child_entered_tree"]

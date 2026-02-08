@@ -1,0 +1,196 @@
+[gd_scene load_steps=24 format=3 uid="uid://b5si0cguclsvw"]
+
+[ext_resource type="Texture2D" uid="uid://dkv247d6fbque" path="res://assets/gfx/base_path2.png" id="1_c3agc"]
+[ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_cphkb"]
+[ext_resource type="Script" uid="uid://c3m8o1v6xtgim" path="res://scripts/optic_slide.gd" id="2_rrmhq"]
+[ext_resource type="PackedScene" uid="uid://bv7v6i7jfv2jp" path="res://scenes/texture_rect.tscn" id="3_1nbks"]
+[ext_resource type="Texture2D" uid="uid://dge74r1g64w3j" path="res://assets/gfx/disappearing_path.png" id="4_l6fwj"]
+[ext_resource type="PackedScene" uid="uid://bj6lmdmw1oxqh" path="res://scenes/grass.tscn" id="5_arkji"]
+[ext_resource type="PackedScene" uid="uid://ctt01rt7wq6ga" path="res://scenes/button.tscn" id="7_fxxlc"]
+[ext_resource type="PackedScene" uid="uid://brg132q5uhxnk" path="res://scenes/howPlatform.tscn" id="8_rrmhq"]
+[ext_resource type="Script" uid="uid://5dcmsnv67j84" path="res://scripts/platform_trigger.gd" id="9_c3agc"]
+[ext_resource type="Script" uid="uid://dq51ijwnu82vm" path="res://scripts/trigger_area.gd" id="10_qpkk6"]
+[ext_resource type="FontFile" uid="uid://cxmtftkag58r8" path="res://assets/sounds/bytebounce/ByteBounce.ttf" id="11_jks7e"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cphkb"]
+distance = -468.83984
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1nbks"]
+distance = 147.57039
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l6fwj"]
+distance = -5.0024414
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arkji"]
+size = Vector2(93.7923, 4.9855957)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn3uu"]
+size = Vector2(143.81616, 4.9855957)
+
+[sub_resource type="Animation" id="Animation_qpkk6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(625.29834, 892.5508)]
+}
+
+[sub_resource type="Animation" id="Animation_c3agc"]
+resource_name = "Why..."
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(625.29834, 892.5508), Vector2(1408.1719, 892.5508)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jks7e"]
+_data = {
+&"RESET": SubResource("Animation_qpkk6"),
+&"Why...": SubResource("Animation_c3agc")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrmhq"]
+size = Vector2(167.57513, 9.999939)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3agc"]
+size = Vector2(1136.7909, 129.11192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jks7e"]
+size = Vector2(115.05467, 110.315186)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6pvd"]
+font = ExtResource("11_jks7e")
+font_size = 100
+
+[node name="slide" type="TextureRect"]
+offset_left = -24.000002
+offset_top = -43.0
+offset_right = 2856.0
+offset_bottom = 1577.0
+scale = Vector2(0.39980918, 0.39885685)
+texture = ExtResource("1_c3agc")
+script = ExtResource("2_rrmhq")
+
+[node name="boundaries" type="StaticBody2D" parent="."]
+
+[node name="floor" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(295.14078, 1083.0953)
+shape = SubResource("WorldBoundaryShape2D_cphkb")
+
+[node name="left-wall" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(-70.03345, 797.27856)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_1nbks")
+
+[node name="right-wall" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(2801.3364, 666.90594)
+rotation = 4.688907
+shape = SubResource("WorldBoundaryShape2D_l6fwj")
+
+[node name="player" parent="." instance=ExtResource("2_cphkb")]
+unique_name_in_owner = true
+position = Vector2(480.2291, 1521.8492)
+scale = Vector2(7.0000005, 7)
+
+[node name="correctPath" parent="." instance=ExtResource("3_1nbks")]
+z_index = 1
+layout_mode = 0
+offset_left = 112.553696
+offset_top = 892.5508
+offset_right = 845.4033
+offset_bottom = 1460.5508
+
+[node name="button" parent="." instance=ExtResource("7_fxxlc")]
+position = Vector2(945.451, 1521.8492)
+
+[node name="disappearingStep" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1110.5299
+offset_top = 589.18384
+offset_right = 1350.5299
+offset_bottom = 859.18384
+scale = Vector2(2.0370436, 2.3299243)
+texture = ExtResource("4_l6fwj")
+
+[node name="coverUp" parent="." instance=ExtResource("5_arkji")]
+visible = false
+layout_mode = 0
+offset_left = 712.84
+offset_top = 1208.4536
+offset_right = 898.84
+offset_bottom = 1408.4536
+texture = null
+
+[node name="stairWay" type="StaticBody2D" parent="."]
+
+[node name="stair1" type="CollisionShape2D" parent="stairWay"]
+position = Vector2(1408.1718, 1273.6399)
+shape = SubResource("RectangleShape2D_arkji")
+one_way_collision = true
+
+[node name="stair2" type="CollisionShape2D" parent="stairWay"]
+position = Vector2(1225.5847, 1456.663)
+shape = SubResource("RectangleShape2D_hn3uu")
+one_way_collision = true
+
+[node name="howPlatform" parent="." instance=ExtResource("8_rrmhq")]
+position = Vector2(625.29834, 892.5508)
+collision_mask = 2
+
+[node name="PlatformTrigger" type="Area2D" parent="howPlatform"]
+position = Vector2(-72.53456, -97.77941)
+collision_mask = 2
+script = ExtResource("9_c3agc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="howPlatform/PlatformTrigger"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_jks7e")
+}
+speed_scale = 0.457
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="howPlatform/PlatformTrigger"]
+position = Vector2(70.03338, 5.340576e-05)
+shape = SubResource("RectangleShape2D_rrmhq")
+
+[node name="OpticalDef" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpticalDef"]
+position = Vector2(2160.4063, 742.1209)
+shape = SubResource("RectangleShape2D_c3agc")
+
+[node name="triggerArea" type="Area2D" parent="."]
+position = Vector2(3.8238013e-06, -3.8146973e-06)
+collision_mask = 2
+script = ExtResource("10_qpkk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerArea"]
+position = Vector2(1168.0573, 1105.6598)
+shape = SubResource("RectangleShape2D_jks7e")
+
+[node name="Label" type="Label" parent="triggerArea"]
+visible = false
+offset_left = 1643.2839
+offset_top = 980.3016
+offset_right = 2363.284
+offset_bottom = 1049.3015
+text = "Why did you jump? "
+label_settings = SubResource("LabelSettings_k6pvd")
+
+[connection signal="tree_entered" from="." to="button" method="_on_slide_tree_entered"]
+[connection signal="body_entered" from="howPlatform/PlatformTrigger" to="howPlatform/PlatformTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="triggerArea" to="triggerArea" method="_on_body_entered"]
