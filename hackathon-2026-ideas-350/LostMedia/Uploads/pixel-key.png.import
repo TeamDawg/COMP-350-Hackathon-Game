@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb4hp4n1b3jkl"
-path="res://.godot/imported/4-40447_red-rope-png-clip-free-rope.png-7278ac6b787d05e8a29f89809ac0a0ab.ctex"
+uid="uid://br0ggche70eq6"
+path="res://.godot/imported/pixel-key.png-01d5fbe2837ea1bed583d516662b7f97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Uploads/4-40447_red-rope-png-clip-free-rope.png"
-dest_files=["res://.godot/imported/4-40447_red-rope-png-clip-free-rope.png-7278ac6b787d05e8a29f89809ac0a0ab.ctex"]
+source_file="res://LostMedia/Uploads/pixel-key.png"
+dest_files=["res://.godot/imported/pixel-key.png-01d5fbe2837ea1bed583d516662b7f97.ctex"]
 
 [params]
 
