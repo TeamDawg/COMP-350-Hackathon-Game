@@ -9,6 +9,7 @@ metadata={
 }
 
 [deps]
+
 source_file="res://assets/gfx/DoesOneGetUp.png"
 dest_files=["res://.godot/imported/DoesOneGetUp.png-2835ee3fa4aaa56b056d255932812415.ctex"]
 
