@@ -76,7 +76,7 @@ size = Vector2(115.05467, 110.315186)
 font = ExtResource("11_jks7e")
 font_size = 100
 
-[node name="slide" type="TextureRect" unique_id=802818568]
+[node name="optics_slide" type="TextureRect" unique_id=823992263]
 offset_left = -24.000002
 offset_top = -43.0
 offset_right = 2856.0

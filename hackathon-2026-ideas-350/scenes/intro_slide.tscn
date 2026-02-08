@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bggpwpu2xbe6m"]
+
+[ext_resource type="Texture2D" uid="uid://fn3o2e2mt2u1" path="res://assets/gfx/intro_slide.png" id="1_70wpi"]
+[ext_resource type="FontFile" uid="uid://cxmtftkag58r8" path="res://assets/sounds/bytebounce/ByteBounce.ttf" id="2_limya"]
+[ext_resource type="Script" uid="uid://jdjtci32e0lv" path="res://scripts/intro_slide.gd" id="2_rabn1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rabn1"]
+font = ExtResource("2_limya")
+font_size = 64
+
+[node name="TextureRect" type="TextureRect" unique_id=1653715821]
+offset_right = 2880.0
+offset_bottom = 1620.0
+scale = Vector2(0.39993772, 0.399838)
+texture = ExtResource("1_70wpi")
+script = ExtResource("2_rabn1")
+
+[node name="Label" type="Label" parent="." unique_id=889134161]
+layout_mode = 0
+offset_left = 1970.3069
+offset_top = 1360.551
+offset_right = 2366.307
+offset_bottom = 1537.551
+scale = Vector2(1.2026263, 1.2263328)
+text = "-To Start, 
+Press Any Keys-"
+label_settings = SubResource("LabelSettings_rabn1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
