@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://0ii4qmqdej2q"]
+[gd_scene format=3 uid="uid://0ii4qmqdej2q"]
 
 [ext_resource type="FontFile" uid="uid://cxmtftkag58r8" path="res://assets/sounds/bytebounce/ByteBounce.ttf" id="1_5lxq6"]
 [ext_resource type="Texture2D" uid="uid://cugm31280b644" path="res://assets/gfx/slidesgirl.timerframe.png" id="1_g5y8c"]
@@ -8,7 +8,7 @@
 font = ExtResource("1_5lxq6")
 font_size = 500
 
-[node name="TextureRect" type="TextureRect"]
+[node name="TextureRect" type="TextureRect" unique_id=734781110]
 offset_left = -115.0
 offset_top = -90.0
 offset_right = 3725.0
@@ -17,7 +17,7 @@ scale = Vector2(0.09863956, 0.14277688)
 texture = ExtResource("1_g5y8c")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1318799425]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.051000003
@@ -33,5 +33,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_srplv")
 
-[node name="Timer" type="Timer" parent="Label"]
+[node name="Timer" type="Timer" parent="Label" unique_id=807665852]
 wait_time = 300.0

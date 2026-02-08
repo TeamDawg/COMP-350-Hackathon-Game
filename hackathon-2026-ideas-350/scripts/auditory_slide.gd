@@ -67,7 +67,7 @@ func death() -> void:
 	$Player.JUMP_VELOCITY = original_jump_velocity
 	$Player/Explosion.play()
 	await get_tree().create_timer(0.5).timeout
-	get_tree().reload_current_scene()
+	get_tree().reload_current_scene.call_deferred()
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body == $Player:

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://imckvjstdfac"]
 
 [ext_resource type="Texture2D" uid="uid://b2t88krldnbx0" path="res://assets/gfx/modernslide1.png" id="1_iug0i"]
-[ext_resource type="Script" uid="uid://b0wwl3djydb2y" path="res://scripts/modern_slide.gd" id="1_wbtym"]
+[ext_resource type="Script" path="res://scripts/modern_slide.gd" id="1_wbtym"]
 [ext_resource type="Texture2D" uid="uid://h8534p1gn23e" path="res://assets/gfx/modernslide2.png" id="2_wbtym"]
 [ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_ygbxu"]
 [ext_resource type="Texture2D" uid="uid://bxii22klwu03t" path="res://assets/gfx/modernslide3.png" id="3_27vwn"]
@@ -69,8 +69,8 @@ expand_mode = 1
 
 [node name="Player" parent="." unique_id=370526508 instance=ExtResource("2_ygbxu")]
 texture_filter = 1
-position = Vector2(570, 613.00006)
-scale = Vector2(5, 5)
+position = Vector2(214, 534)
+scale = Vector2(0.09987806, 0.05689824)
 
 [node name="Coin" type="AudioStreamPlayer" parent="Player" unique_id=115164160]
 stream = ExtResource("6_27vwn")
