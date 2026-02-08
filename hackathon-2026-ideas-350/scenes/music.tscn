@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://kf2fkjm1auxt"]
+
+[ext_resource type="AudioStream" uid="uid://dxiqdkurr8ylh" path="res://assets/sounds/ella_music.ogg" id="1_ibx2e"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1751182603]
+stream = ExtResource("1_ibx2e")
