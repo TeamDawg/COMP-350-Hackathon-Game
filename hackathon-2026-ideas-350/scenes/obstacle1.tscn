@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c4yi80qdn10x3"]
+
+[ext_resource type="Script" path="res://scripts/obstacle1.gd" id="1_y0vjh"]
+[ext_resource type="Texture2D" path="res://Uploads/pngtree-pink-optical-illusion-donut-vector-png-image_6290787.png" id="2_km1om"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5phv"]
+
+[node name="Node2D" type="Node2D" unique_id=106580253]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=967361196]
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=1438016975]
+collision_mask = 2
+script = ExtResource("1_y0vjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Area2D" unique_id=1417414749]
+position = Vector2(103, 70.00001)
+scale = Vector2(-0.12985872, 0.13753238)
+texture = ExtResource("2_km1om")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1685272131]
+position = Vector2(102.99999, 70)
+scale = Vector2(2.2074924, -1.2721938)
+shape = SubResource("CircleShape2D_h5phv")
