@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://brg132q5uhxnk"]
+[gd_scene format=3 uid="uid://cj4kkb83ogb8b"]
 
 [ext_resource type="Texture2D" uid="uid://dfmc4gns0y37e" path="res://assets/gfx/how.png" id="1_5mxij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqtjb"]
 size = Vector2(165.75, 62)
 
-[node name="howPlatform" type="AnimatableBody2D"]
+[node name="howPlatform" type="AnimatableBody2D" unique_id=41007217]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546660899]
 position = Vector2(0, -54)
 texture = ExtResource("1_5mxij")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085281301]
 position = Vector2(-3.875, -55)
 shape = SubResource("RectangleShape2D_qqtjb")
 one_way_collision = true

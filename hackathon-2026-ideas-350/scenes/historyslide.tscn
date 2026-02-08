@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://c0dfdg2hstqqx"]
+
+[ext_resource type="Texture2D" uid="uid://ceo0y06ywuuca" path="res://LostMedia/Uploads/Screenshot 2026-02-07 084701.png" id="1_3485t"]
+[ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_urxx8"]
+[ext_resource type="Texture2D" uid="uid://bb4hp4n1b3jkl" path="res://LostMedia/Uploads/4-40447_red-rope-png-clip-free-rope.png" id="2_wi7hl"]
+[ext_resource type="Script" uid="uid://dwtm5fuivg52u" path="res://LostMedia/coin.gd" id="3_wi7hl"]
+[ext_resource type="PackedScene" uid="uid://du8ft6uh34sde" path="res://scenes/area_2d.tscn" id="5_5mvok"]
+[ext_resource type="Script" uid="uid://cqm3k0rdp0gap" path="res://LostMedia/node_2d.gd" id="6_u7woi"]
+[ext_resource type="Script" uid="uid://lyc3uheh6g7n" path="res://LostMedia/key.gd" id="7_5xouf"]
+[ext_resource type="Texture2D" uid="uid://br0ggche70eq6" path="res://LostMedia/Uploads/pixel-key.png" id="7_vrbxu"]
+[ext_resource type="Script" uid="uid://bva3ml0xpulr2" path="res://LostMedia/door_key.gd" id="9_88e5o"]
+[ext_resource type="Texture2D" uid="uid://dtovfjlxh866r" path="res://LostMedia/Uploads/classic-wooden-door-with-keyhole-png.png" id="10_xv6j6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mvok"]
+radius = 104.41742
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wi7hl"]
+a = Vector2(-3, -181)
+b = Vector2(-1, 647)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5mvok"]
+normal = Vector2(-0.0030769084, -0.99999523)
+distance = -1208.4601
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u7woi"]
+a = Vector2(1691, 11)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vrbxu"]
+b = Vector2(2, 185.43478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3485t"]
+size = Vector2(514.5, 87.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urxx8"]
+size = Vector2(171.61877, 306.49023)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7woi"]
+size = Vector2(82, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrbxu"]
+size = Vector2(224.5, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bylq2"]
+size = Vector2(38, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eorhm"]
+size = Vector2(43.75, 56)
+
+[node name="Node2D" type="Node2D" unique_id=786953876 groups=["Player"]]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1748408612 groups=["Coin"]]
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(0.99850273, 1)
+texture = ExtResource("1_3485t")
+expand_mode = 1
+
+[node name="Coin" type="TextureRect" parent="." unique_id=2086710250 groups=["Coin"]]
+offset_left = 527.0
+offset_top = 530.0
+offset_right = 1494.0
+offset_bottom = 1002.0
+rotation = -1.6925751
+scale = Vector2(0.10674747, 0.105177134)
+texture = ExtResource("2_wi7hl")
+script = ExtResource("3_wi7hl")
+
+[node name="Area2D" type="Area2D" parent="Coin" unique_id=1005233066 groups=["Coin"]]
+collision_mask = 2
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin/Area2D" unique_id=569579695 groups=["Coin", "Key"]]
+position = Vector2(-56.897736, 65.43881)
+shape = SubResource("CircleShape2D_5mvok")
+
+[node name="Player" parent="." unique_id=370526508 groups=["Player"] instance=ExtResource("2_urxx8")]
+texture_filter = 1
+position = Vector2(104, 610)
+scale = Vector2(3.0100508, 3.5011783)
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=1944838845]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries" unique_id=1801109123]
+position = Vector2(30, 92)
+shape = SubResource("SegmentShape2D_wi7hl")
+
+[node name="Left Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1742826779]
+position = Vector2(243.99998, -199.99997)
+rotation = -3.1415927
+scale = Vector2(3.9005902, -0.6826909)
+shape = SubResource("WorldBoundaryShape2D_5mvok")
+
+[node name="Top Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1468220407]
+position = Vector2(-95, 118)
+shape = SubResource("SegmentShape2D_u7woi")
+
+[node name="Right Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1703244047]
+position = Vector2(1122, 13)
+scale = Vector2(1, 4.6)
+shape = SubResource("SegmentShape2D_vrbxu")
+
+[node name="Letter Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=1453665424]
+position = Vector2(819, 581.375)
+shape = SubResource("RectangleShape2D_3485t")
+
+[node name="Image Boundary" type="CollisionShape2D" parent="Boundaries" unique_id=655666655]
+position = Vector2(643.33704, 393.88947)
+scale = Vector2(0.94788027, 0.95852625)
+shape = SubResource("RectangleShape2D_urxx8")
+
+[node name="Guy Collision" type="CollisionPolygon2D" parent="Boundaries" unique_id=457759379]
+visible = false
+scale = Vector2(1.0694867, 1.1512032)
+polygon = PackedVector2Array(694.1112, 351.14798, 730.1936, 356.76633, 729.2441, 336.16565, 749.1843, 331.48367, 757.73016, 341.78403, 786.21625, 340.84763, 820.3996, 321.18335, 841.28937, 294.9643, 852.68384, 280.91837, 894.46344, 271.5544, 919.15137, 290.28232, 894.46344, 287.47314, 886.8671, 302.45544, 874.5232, 321.18335, 788.11536, 387.66736, 766.276, 397.96768)
+
+[node name="Key Floor" type="CollisionShape2D" parent="Boundaries" unique_id=1017661715]
+position = Vector2(109, 289)
+shape = SubResource("RectangleShape2D_u7woi")
+
+[node name="Key Floor2" type="CollisionShape2D" parent="Boundaries" unique_id=895746498]
+position = Vector2(329, 299)
+shape = SubResource("RectangleShape2D_vrbxu")
+
+[node name="Area2D" parent="." unique_id=173164117 instance=ExtResource("5_5mvok")]
+position = Vector2(478.99997, 1146)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=715477692]
+script = ExtResource("6_u7woi")
+
+[node name="Key" type="Area2D" parent="." unique_id=1537758246]
+script = ExtResource("7_5xouf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=204130701]
+position = Vector2(106, 210)
+rotation = -1.5797281
+scale = Vector2(0.049097046, 0.062193703)
+texture = ExtResource("7_vrbxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1675633234]
+position = Vector2(106, 211.5)
+shape = SubResource("RectangleShape2D_bylq2")
+
+[node name="DoorKey" type="Area2D" parent="." unique_id=71346280]
+script = ExtResource("9_88e5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorKey" unique_id=1585599229]
+position = Vector2(1007, 190)
+scale = Vector2(0.14425008, 0.12717855)
+texture = ExtResource("10_xv6j6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorKey" unique_id=1305043932]
+position = Vector2(1006.125, 199)
+shape = SubResource("RectangleShape2D_eorhm")
+
+[connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]

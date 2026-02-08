@@ -85,28 +85,28 @@ scale = Vector2(0.39980918, 0.39885685)
 texture = ExtResource("1_c3agc")
 script = ExtResource("2_rrmhq")
 
-[node name="boundaries" type="StaticBody2D" parent="." unique_id=849522508]
+[node name="boundaries" type="StaticBody2D" parent="." unique_id=1951982715]
 
 [node name="floor" type="CollisionShape2D" parent="boundaries" unique_id=1850207757]
 position = Vector2(295.1408, 1105.6598)
 shape = SubResource("WorldBoundaryShape2D_cphkb")
 
-[node name="left-wall" type="CollisionShape2D" parent="boundaries" unique_id=1164986814]
+[node name="left-wall" type="CollisionShape2D" parent="boundaries" unique_id=1559511567]
 position = Vector2(-70.03345, 797.27856)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_1nbks")
 
-[node name="right-wall" type="CollisionShape2D" parent="boundaries" unique_id=1677089005]
+[node name="right-wall" type="CollisionShape2D" parent="boundaries" unique_id=2125908913]
 position = Vector2(2801.3364, 666.90594)
 rotation = 4.688907
 shape = SubResource("WorldBoundaryShape2D_l6fwj")
 
-[node name="player" parent="." unique_id=1360483534 instance=ExtResource("2_cphkb")]
+[node name="player" parent="." unique_id=1962014413 instance=ExtResource("2_cphkb")]
 unique_name_in_owner = true
 position = Vector2(522.7493, 1481.7346)
 scale = Vector2(0.1, 0.1)
 
-[node name="correctPath" parent="." unique_id=1306907347 instance=ExtResource("3_1nbks")]
+[node name="correctPath" parent="." unique_id=2078098896 instance=ExtResource("3_1nbks")]
 z_index = 1
 layout_mode = 0
 offset_left = 112.553696
@@ -114,10 +114,10 @@ offset_top = 892.5508
 offset_right = 845.4033
 offset_bottom = 1460.5508
 
-[node name="button" parent="." unique_id=535916376 instance=ExtResource("7_fxxlc")]
+[node name="button" parent="." unique_id=1635194617 instance=ExtResource("7_fxxlc")]
 position = Vector2(945.451, 1521.8492)
 
-[node name="disappearingStep" type="TextureRect" parent="." unique_id=1299822910]
+[node name="disappearingStep" type="TextureRect" parent="." unique_id=470832924]
 layout_mode = 0
 offset_left = 1110.5299
 offset_top = 589.18384
@@ -126,7 +126,7 @@ offset_bottom = 859.18384
 scale = Vector2(2.0370436, 2.3299243)
 texture = ExtResource("4_l6fwj")
 
-[node name="coverUp" parent="." unique_id=1579732773 instance=ExtResource("5_arkji")]
+[node name="coverUp" parent="." unique_id=792403515 instance=ExtResource("5_arkji")]
 visible = false
 layout_mode = 0
 offset_left = 712.84
@@ -135,52 +135,52 @@ offset_right = 898.84
 offset_bottom = 1408.4536
 texture = null
 
-[node name="stairWay" type="StaticBody2D" parent="." unique_id=1552560045]
+[node name="stairWay" type="StaticBody2D" parent="." unique_id=1908495216]
 
-[node name="stair1" type="CollisionShape2D" parent="stairWay" unique_id=365041535]
+[node name="stair1" type="CollisionShape2D" parent="stairWay" unique_id=1011952275]
 position = Vector2(1408.1718, 1273.6399)
 shape = SubResource("RectangleShape2D_arkji")
 one_way_collision = true
 
-[node name="stair2" type="CollisionShape2D" parent="stairWay" unique_id=1040289394]
+[node name="stair2" type="CollisionShape2D" parent="stairWay" unique_id=801907534]
 position = Vector2(1225.5847, 1456.663)
 shape = SubResource("RectangleShape2D_hn3uu")
 one_way_collision = true
 
-[node name="howPlatform" parent="." unique_id=1757324618 instance=ExtResource("8_rrmhq")]
+[node name="howPlatform" parent="." unique_id=1512021750 instance=ExtResource("8_rrmhq")]
 position = Vector2(625.29834, 892.5508)
 collision_mask = 2
 
-[node name="PlatformTrigger" type="Area2D" parent="howPlatform" unique_id=588316911]
+[node name="PlatformTrigger" type="Area2D" parent="howPlatform" unique_id=1313589903]
 position = Vector2(-72.53456, -97.77941)
 collision_mask = 2
 script = ExtResource("9_c3agc")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="howPlatform/PlatformTrigger" unique_id=861061041]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="howPlatform/PlatformTrigger" unique_id=172033997]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_jks7e")
 speed_scale = 0.457
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="howPlatform/PlatformTrigger" unique_id=1914553257]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="howPlatform/PlatformTrigger" unique_id=2039681148]
 position = Vector2(70.03338, 5.340576e-05)
 shape = SubResource("RectangleShape2D_rrmhq")
 
-[node name="OpticalDef" type="StaticBody2D" parent="." unique_id=1996809047]
+[node name="OpticalDef" type="StaticBody2D" parent="." unique_id=731866339]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OpticalDef" unique_id=1564671574]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpticalDef" unique_id=1853487204]
 position = Vector2(2160.4063, 742.1209)
 shape = SubResource("RectangleShape2D_c3agc")
 
-[node name="triggerArea" type="Area2D" parent="." unique_id=1220505722]
+[node name="triggerArea" type="Area2D" parent="." unique_id=46232465]
 position = Vector2(3.8238013e-06, -3.8146973e-06)
 collision_mask = 2
 script = ExtResource("10_qpkk6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerArea" unique_id=1376718818]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerArea" unique_id=1109585110]
 position = Vector2(1168.0573, 1105.6598)
 shape = SubResource("RectangleShape2D_jks7e")
 
-[node name="Label" type="Label" parent="triggerArea" unique_id=51043919]
+[node name="Label" type="Label" parent="triggerArea" unique_id=800821046]
 visible = false
 offset_left = 1643.2839
 offset_top = 980.3016

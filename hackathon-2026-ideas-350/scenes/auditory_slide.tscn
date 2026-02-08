@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c8rwuqxd0qoh"]
+[gd_scene format=3 uid="uid://c8uxo7ra72if1"]
 
 [ext_resource type="Texture2D" uid="uid://c6q1iejl83ibx" path="res://assets/gfx/auditoryillusion_mcgurk_slide.png" id="1_ko1a7"]
 [ext_resource type="Script" uid="uid://qbbhd4xtx2c2" path="res://scripts/auditory_slide.gd" id="1_xxe66"]
@@ -82,6 +82,14 @@ b = Vector2(607, 391)
 [node name="AuditorySlide" type="Node2D" unique_id=757327472]
 script = ExtResource("1_xxe66")
 
+[node name="Player" parent="." unique_id=370526508 instance=ExtResource("3_32cb4")]
+texture_filter = 1
+position = Vector2(81, 597)
+scale = Vector2(0.09636896, 0.038302857)
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Player" unique_id=229467871]
+stream = ExtResource("6_skwpl")
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=186923684]
 offset_left = -159.0
 offset_top = -351.0
@@ -113,14 +121,6 @@ texture_normal = ExtResource("5_by1xn")
 texture_pressed = ExtResource("6_3i0wa")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Player" parent="." unique_id=370526508 instance=ExtResource("3_32cb4")]
-texture_filter = 1
-position = Vector2(48, 646)
-scale = Vector2(5, 5)
-
-[node name="Explosion" type="AudioStreamPlayer" parent="Player" unique_id=229467871]
-stream = ExtResource("6_skwpl")
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=905744255]
 
