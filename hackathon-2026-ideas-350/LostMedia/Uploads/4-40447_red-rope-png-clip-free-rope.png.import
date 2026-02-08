@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7p83swdljr7s"
-path="res://.godot/imported/icon.svg-1df931a5c84334e31123c1aca52069ec.ctex"
+uid="uid://bb4hp4n1b3jkl"
+path="res://.godot/imported/4-40447_red-rope-png-clip-free-rope.png-39caec5a39611988780c95e283e209ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Uploads/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-1df931a5c84334e31123c1aca52069ec.ctex"]
+source_file="res://LostMedia/Uploads/4-40447_red-rope-png-clip-free-rope.png"
+dest_files=["res://.godot/imported/4-40447_red-rope-png-clip-free-rope.png-39caec5a39611988780c95e283e209ca.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
