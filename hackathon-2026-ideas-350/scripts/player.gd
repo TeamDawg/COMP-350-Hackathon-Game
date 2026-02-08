@@ -29,6 +29,12 @@ func _physics_process(delta: float) -> void:
 			$Walking.play()
 	else:
 			$Walking.stop()
+	
+	if Input.is_action_pressed("shift"):
+		if not $Sprint.playing:
+			$Sprint.play()
+	else:
+			$Sprint.stop()
 
 	# Get the input direction (-1, 0, 1)
 	var direction := Input.get_axis("move_left", "move_right")

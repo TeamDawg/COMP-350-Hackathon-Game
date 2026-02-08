@@ -163,3 +163,6 @@ volume_db = -5.0
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="." unique_id=729345601]
 stream = ExtResource("29_dt7fs")
+
+[node name="Sprint" type="AudioStreamPlayer2D" parent="." unique_id=1318207629]
+stream = ExtResource("29_dt7fs")
