@@ -261,3 +261,266 @@ text = "illusion"
 [connection signal="body_entered" from="CorrectDetectors" to="." method="_on_correct_detectors_body_entered"]
 [connection signal="body_entered" from="WrongDetectors" to="." method="_on_wrong_detectors_body_entered"]
 [connection signal="body_entered" from="Gun" to="." method="_on_gun_body_entered"]
+
+[gd_scene format=3 uid="uid://bmj8yad2tdjgl"]
+
+[ext_resource type="Texture2D" path="res://assets/gfx/modernslide1.png" id="1_iug0i"]
+[ext_resource type="Script" path="res://scripts/modern_slide.gd" id="1_wbtym"]
+[ext_resource type="Texture2D" path="res://assets/gfx/modernslide2.png" id="2_wbtym"]
+[ext_resource type="PackedScene" uid="uid://b02hqbtfmmuq3" path="res://scenes/player.tscn" id="2_ygbxu"]
+[ext_resource type="Texture2D" path="res://assets/gfx/modernslide3.png" id="3_27vwn"]
+[ext_resource type="AudioStream" uid="uid://cfe2vydldq4m3" path="res://assets/sounds/coin.wav" id="6_27vwn"]
+[ext_resource type="AudioStream" uid="uid://dglvg75ktdb0e" path="res://assets/sounds/hurt.wav" id="6_wbtym"]
+[ext_resource type="FontFile" path="res://assets/fonts/PlayfairDisplay[wght].ttf" id="8_1lwja"]
+[ext_resource type="Texture2D" path="res://assets/gfx/gun_blast.png" id="9_kmxo2"]
+[ext_resource type="AudioStream" path="res://assets/sounds/gunshot.ogg" id="10_jfy04"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1lwja"]
+distance = 22.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kmxo2"]
+normal = Vector2(1, 0)
+distance = 30.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jfy04"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbtym"]
+size = Vector2(67, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lwja"]
+size = Vector2(58, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmxo2"]
+size = Vector2(173.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27vwn"]
+size = Vector2(463.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfy04"]
+size = Vector2(677.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh6ij"]
+size = Vector2(698.75, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga161"]
+size = Vector2(113.5, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s855h"]
+size = Vector2(20, 75.5)
+
+[node name="modern_slide" type="Node2D" unique_id=1080513194]
+script = ExtResource("1_wbtym")
+
+[node name="BG3" type="TextureRect" parent="." unique_id=1131077099]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_27vwn")
+expand_mode = 1
+
+[node name="BG2" type="TextureRect" parent="." unique_id=203781140]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_wbtym")
+expand_mode = 1
+
+[node name="BG1" type="TextureRect" parent="." unique_id=169659936]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_iug0i")
+expand_mode = 1
+
+[node name="Player" parent="." unique_id=370526508 instance=ExtResource("2_ygbxu")]
+texture_filter = 1
+position = Vector2(570, 613.00006)
+scale = Vector2(5, 5)
+
+[node name="Coin" type="AudioStreamPlayer" parent="Player" unique_id=115164160]
+stream = ExtResource("6_27vwn")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="Player" unique_id=1613231787]
+stream = ExtResource("6_wbtym")
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=1546813325]
+
+[node name="Bottom" type="CollisionShape2D" parent="Boundaries" unique_id=694397628]
+position = Vector2(0, 647)
+shape = SubResource("WorldBoundaryShape2D_1lwja")
+
+[node name="Left" type="CollisionShape2D" parent="Boundaries" unique_id=1812072247]
+shape = SubResource("WorldBoundaryShape2D_kmxo2")
+
+[node name="Right" type="CollisionShape2D" parent="Boundaries" unique_id=2057774891]
+position = Vector2(1122, 0)
+shape = SubResource("WorldBoundaryShape2D_jfy04")
+
+[node name="StarCollisionPolygon2D1" type="CollisionPolygon2D" parent="Boundaries" unique_id=977889450]
+polygon = PackedVector2Array(90, 565, 88, 576, 87, 578, 84, 579, 30, 581, 84, 582, 87, 583, 88, 585, 90, 596, 92, 585, 93, 583, 95, 582, 104, 581, 100, 580, 94, 578, 92, 577, 92, 576)
+
+[node name="StarCollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundaries" unique_id=1239823415]
+position = Vector2(972, 0)
+polygon = PackedVector2Array(90, 565, 88, 576, 87, 578, 84, 579, 74, 581, 84, 582, 87, 583, 88, 585, 90, 596, 92, 585, 93, 583, 95, 582, 150, 581, 100, 580, 94, 578, 92, 577, 92, 576)
+
+[node name="Text1" type="CollisionPolygon2D" parent="Boundaries" unique_id=42916105]
+visible = false
+polygon = PackedVector2Array(249, 426, 253, 422, 255, 424, 257, 422, 259, 424, 308, 375, 320, 390, 314, 394, 316, 395, 315, 396, 322, 401, 326, 397, 373, 397, 373, 397, 374, 397, 374, 395, 381, 395, 381, 394, 381, 385, 383, 385, 383, 374, 402, 375, 398, 378, 397, 383, 398, 387, 401, 391, 405, 392, 409, 390, 413, 391, 425, 392, 446, 392, 455, 392, 459, 393, 464, 393, 466, 391, 472, 391, 476, 393, 699, 393, 699, 397, 705, 397, 707, 393, 907, 393, 907, 397, 909, 397, 912, 393, 926, 393, 926, 397, 930, 397, 932, 393, 940, 393, 940, 390, 937, 390, 936, 381, 912, 381, 912, 374, 554, 238, 248, 323, 198, 372, 200, 374, 198, 376)
+
+[node name="Text2" type="CollisionPolygon2D" parent="Boundaries" unique_id=120231438]
+visible = false
+position = Vector2(47, -20)
+polygon = PackedVector2Array(53, 401, 59, 418, 158, 417, 158, 422, 166, 422, 170, 418, 280, 418, 282, 421, 290, 421, 293, 418, 359, 418, 361, 421, 369, 421, 371, 418, 420, 417, 421, 422, 424, 422, 427, 418, 632, 417, 632, 421, 643, 421, 643, 417, 805, 417, 805, 380, 832, 380, 832, 424, 893, 424, 898, 427, 904, 423, 898, 418, 910, 410, 952, 452, 956, 448, 958, 450, 960, 447, 962, 449, 1010, 401, 1009, 400, 1010, 399, 563, 153, 229, 367, 229, 403)
+disabled = true
+
+[node name="Text3" type="CollisionPolygon2D" parent="Boundaries" unique_id=1878651911]
+visible = false
+position = Vector2(47, -20)
+polygon = PackedVector2Array(19, 434, 19, 452, 402, 452, 402, 456, 412, 456, 415, 452, 477, 452, 477, 456, 482, 456, 485, 452, 648, 452, 648, 456, 655, 456, 655, 452, 1024, 452, 1075, 437, 911, 437, 541, 298)
+disabled = true
+
+[node name="CorrectDetectors" type="Area2D" parent="." unique_id=1939157268]
+collision_mask = 2
+
+[node name="Correct1" type="CollisionShape2D" parent="CorrectDetectors" unique_id=1001484313]
+visible = false
+position = Vector2(431.5, 391)
+shape = SubResource("RectangleShape2D_wbtym")
+
+[node name="Correct2" type="CollisionShape2D" parent="CorrectDetectors" unique_id=1144208964]
+visible = false
+position = Vector2(136, 398)
+shape = SubResource("RectangleShape2D_1lwja")
+disabled = true
+
+[node name="Correct3" type="CollisionShape2D" parent="CorrectDetectors" unique_id=965120803]
+visible = false
+position = Vector2(860.25, 434)
+shape = SubResource("RectangleShape2D_kmxo2")
+disabled = true
+
+[node name="WrongDetectors" type="Area2D" parent="." unique_id=733908890]
+collision_mask = 2
+
+[node name="Wrong1" type="CollisionShape2D" parent="WrongDetectors" unique_id=1370416327]
+visible = false
+position = Vector2(704.25, 391)
+shape = SubResource("RectangleShape2D_27vwn")
+
+[node name="Wrong2" type="CollisionShape2D" parent="WrongDetectors" unique_id=512447260]
+visible = false
+position = Vector2(511.25, 398)
+shape = SubResource("RectangleShape2D_jfy04")
+disabled = true
+
+[node name="Wrong3_1" type="CollisionShape2D" parent="WrongDetectors" unique_id=1678040458]
+visible = false
+position = Vector2(416.625, 434)
+shape = SubResource("RectangleShape2D_eh6ij")
+disabled = true
+
+[node name="Wrong3_2" type="CollisionShape2D" parent="WrongDetectors" unique_id=1243032912]
+visible = false
+position = Vector2(1012.25, 434)
+shape = SubResource("RectangleShape2D_ga161")
+disabled = true
+
+[node name="CorrectWord1" type="Label" parent="." unique_id=351761511]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 398.0
+offset_top = 365.0
+offset_right = 465.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_1lwja")
+theme_override_font_sizes/font_size = 22
+text = "Games"
+
+[node name="CorrectWord2" type="Label" parent="." unique_id=1578488413]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 100.0
+offset_top = 369.0
+offset_right = 167.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_1lwja")
+theme_override_font_sizes/font_size = 22
+text = "Words"
+
+[node name="Gun" type="Area2D" parent="." unique_id=538107820]
+position = Vector2(340, 498)
+collision_mask = 2
+monitoring = false
+
+[node name="WordL" type="Label" parent="Gun" unique_id=1016201547]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_top = -122.0
+offset_right = 67.0
+offset_bottom = -92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_1lwja")
+theme_override_font_sizes/font_size = 22
+text = "L"
+
+[node name="GunBlast" type="TextureRect" parent="Gun" unique_id=220432745]
+visible = false
+offset_right = 18.0
+offset_bottom = 45.538452
+texture = ExtResource("9_kmxo2")
+expand_mode = 1
+
+[node name="GunCollision" type="CollisionShape2D" parent="Gun" unique_id=580668844]
+position = Vector2(9, 80.25)
+shape = SubResource("RectangleShape2D_s855h")
+
+[node name="GunShot" type="AudioStreamPlayer2D" parent="Gun" unique_id=1513663658]
+position = Vector2(9, 52)
+stream = ExtResource("10_jfy04")
+
+[node name="CorrectWord3" type="Control" parent="." unique_id=967419819]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CorrectWord3_1" type="Label" parent="CorrectWord3" unique_id=1994137500]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 772.0
+offset_top = 404.0
+offset_right = 944.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_1lwja")
+theme_override_font_sizes/font_size = 22
+text = "break"
+
+[node name="CorrectWord3_2" type="Label" parent="CorrectWord3" unique_id=511364726]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 834.0
+offset_top = 404.0
+offset_right = 1006.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_1lwja")
+theme_override_font_sizes/font_size = 22
+text = "the"
+
+[node name="CorrectWord3_3" type="Label" parent="CorrectWord3" unique_id=161807044]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 873.0
+offset_top = 404.0
+offset_right = 1045.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_1lwja")
+theme_override_font_sizes/font_size = 22
+text = "illusion"
+
+[connection signal="body_entered" from="CorrectDetectors" to="." method="_on_correct_detectors_body_entered"]
+[connection signal="body_entered" from="WrongDetectors" to="." method="_on_wrong_detectors_body_entered"]
+[connection signal="body_entered" from="Gun" to="." method="_on_gun_body_entered"]
