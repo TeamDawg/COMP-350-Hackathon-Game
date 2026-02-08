@@ -2,6 +2,7 @@
 
 [ext_resource type="VideoStream" uid="uid://b17hf1ioavckb" path="res://assets/video/4-5.mp4.ogv" id="1_vbpe1"]
 [ext_resource type="Script" uid="uid://dbud1q5c5uluw" path="res://scripts/4_modern_to_conclusion.gd" id="2_eketb"]
+[ext_resource type="AudioStream" uid="uid://bqfayk46a32qt" path="res://assets/sounds/glass_break.ogg" id="3_yi0en"]
 
 [node name="4ModernToConclusion" type="VideoStreamPlayer" unique_id=951599687]
 anchors_preset = 15
@@ -15,5 +16,8 @@ scale = Vector2(0.6, 0.6)
 stream = ExtResource("1_vbpe1")
 autoplay = true
 script = ExtResource("2_eketb")
+
+[node name="GlassBreak" type="AudioStreamPlayer" parent="." unique_id=1194374444]
+stream = ExtResource("3_yi0en")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
