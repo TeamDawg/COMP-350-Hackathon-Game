@@ -140,6 +140,7 @@ height = 304.0
 
 [node name="Player" type="CharacterBody2D" unique_id=678045277]
 z_index = 5
+scale = Vector2(0.043812025, 0.015294974)
 collision_layer = 2
 script = ExtResource("1_g2els")
 
@@ -156,6 +157,7 @@ scale = Vector2(3.2890325, 5.0378466)
 shape = SubResource("CapsuleShape2D_fjrip")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=725331316]
+scale = Vector2(0.31916338, -0.10175016)
 stream = ExtResource("28_dt7fs")
 volume_db = -5.0
 
