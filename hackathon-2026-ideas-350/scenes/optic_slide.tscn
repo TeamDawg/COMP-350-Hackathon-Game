@@ -77,10 +77,8 @@ font = ExtResource("11_jks7e")
 font_size = 100
 
 [node name="optics_slide" type="TextureRect" unique_id=823992263]
-offset_left = -24.000002
-offset_top = -43.0
-offset_right = 2856.0
-offset_bottom = 1577.0
+offset_right = 2880.0
+offset_bottom = 1620.0
 scale = Vector2(0.39980918, 0.39885685)
 texture = ExtResource("1_c3agc")
 script = ExtResource("2_rrmhq")

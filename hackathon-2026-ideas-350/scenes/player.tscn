@@ -135,8 +135,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
-radius = 75.402115
-height = 304.0
+radius = 85.18518
+height = 358.31717
 
 [node name="Player" type="CharacterBody2D" unique_id=678045277]
 z_index = 5
@@ -152,7 +152,7 @@ autoplay = "idle"
 frame_progress = 0.8302443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030886130]
-position = Vector2(0, -62.000004)
+position = Vector2(0, -82.00002)
 scale = Vector2(2.7, 4.136)
 shape = SubResource("CapsuleShape2D_fjrip")
 
