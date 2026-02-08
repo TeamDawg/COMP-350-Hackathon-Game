@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b02hqbtfmmuq3"]
 
-[ext_resource type="Texture2D" uid="uid://cm2b8y4gx47xv" path="res://assets/gfx/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cifh8vhwlvym2" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="AudioStream" uid="uid://bgk42l3q5fvj4" path="res://assets/sounds/jumpbubble.wav" id="3_dqkch"]
 [ext_resource type="AudioStream" uid="uid://btqlev4w6i5qi" path="res://assets/sounds/editbubblewalk.wav" id="4_dqkch"]
@@ -93,86 +92,121 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g2els")
+"texture": ExtResource("2_pf23h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhqgy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dqkch")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlg0r")
+"texture": ExtResource("8_487ah")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tuyoq")
+"texture": ExtResource("3_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gl8cc")
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fjrip")
+"texture": ExtResource("9_md1ol")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_smehm")
+"texture": ExtResource("10_bj30b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ur7pv")
+"texture": ExtResource("11_jc3p3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y4r1p")
+"texture": ExtResource("12_hax0n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d2wvv")
+"texture": ExtResource("13_t4otl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3v2ag")
+"texture": ExtResource("14_j2b1d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jej6c")
+"texture": ExtResource("15_cs1tg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1ej7")
+"texture": ExtResource("16_2dvfe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oprun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a8ls1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qfm1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fulsm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4r5pv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_60mlk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4ail")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a38lo")
+"texture": ExtResource("17_giy8y")
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_fdfoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hhpqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_holxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_u2ulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6e8lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2gdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sc3ue")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
-radius = 5.0
-height = 16.0
+radius = 76.0102
+height = 323.94794
 
 [node name="Player" type="CharacterBody2D" unique_id=116074520]
 z_index = 5
@@ -182,9 +216,8 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=896068521 groups=["Button", "Player"]]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"run"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.59723455
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1581658587]
 position = Vector2(0, -8)
