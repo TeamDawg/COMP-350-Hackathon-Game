@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0psd2145kqam"]
+
+[ext_resource type="VideoStream" uid="uid://cwdr0bh1d7j8x" path="res://assets/video/3-4.mp4.ogv" id="1_07n8b"]
+[ext_resource type="Script" uid="uid://dxv68s8yuljb5" path="res://scripts/3_auditory_to_modern.gd" id="2_cwmmy"]
+
+[node name="3AuditoryToModern" type="VideoStreamPlayer" unique_id=1187311954]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_07n8b")
+autoplay = true
+script = ExtResource("2_cwmmy")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

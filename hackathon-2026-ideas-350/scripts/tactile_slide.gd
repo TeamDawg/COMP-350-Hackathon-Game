@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		$RubberHand/MetalBar.play()
 		await get_tree().create_timer(1.5).timeout
 		$Player.invertmovement()
-		get_tree().change_scene_to_file("res://scenes/auditory_slide.tscn")
+		get_tree().change_scene_to_file("res://scenes/transitions/2_TactileToAuditory.tscn")
 
 # Upon entering rubber hand.
 func _on_rubber_hand_body_entered(body: Node2D) -> void:
