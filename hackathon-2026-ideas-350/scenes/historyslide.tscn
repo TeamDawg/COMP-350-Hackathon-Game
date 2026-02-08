@@ -1,4 +1,3 @@
-@ -1,155 +1,3 @@
 [gd_scene format=3 uid="uid://b5jo6pejdql4b"]
 
 [ext_resource type="Texture2D" uid="uid://ceo0y06ywuuca" path="res://Uploads/Screenshot 2026-02-07 084701.png" id="1_3485t"]
@@ -154,4 +153,3 @@ position = Vector2(1006.125, 199)
 shape = SubResource("RectangleShape2D_eorhm")
 
 [connection signal="body_entered" from="Coin/Area2D" to="Coin" method="_on_area_2d_body_entered"]
-[node name="tactile_slide" type="Node2D" unique_id=279844191]
