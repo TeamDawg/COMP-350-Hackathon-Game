@@ -198,14 +198,14 @@ label_settings = SubResource("LabelSettings_k6pvd")
 
 [node name="Label" type="Label" parent="." unique_id=1133109853]
 layout_mode = 0
-offset_left = 1898.4056
-offset_top = 1273.6399
-offset_right = 2523.4058
-offset_bottom = 1558.6399
-text = "W, D : Movement 
+offset_left = 1628.2767
+offset_top = 1200.9321
+offset_right = 2760.2769
+offset_bottom = 1485.9321
+text = "A, D or Arrow Keys: Movement 
 Shift : Sprint
 Space: Jump
-"
+Esc: Exit"
 label_settings = SubResource("LabelSettings_jks7e")
 horizontal_alignment = 1
 vertical_alignment = 1

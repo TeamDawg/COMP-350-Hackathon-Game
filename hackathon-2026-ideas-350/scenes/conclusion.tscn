@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bh6axa4pj3gs8"]
 
 [ext_resource type="Texture2D" uid="uid://b3g6kt0kvgsut" path="res://assets/gfx/conclusion.png" id="1_rvn27"]
+[ext_resource type="Script" uid="uid://bb4j2jmtj4gup" path="res://scripts/conclusion.gd" id="2_hxi23"]
 
 [node name="Conclusion_slide" type="TextureRect" unique_id=2100623370]
 anchors_preset = 15
@@ -10,3 +11,4 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rvn27")
 expand_mode = 3
+script = ExtResource("2_hxi23")
